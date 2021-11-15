@@ -45,6 +45,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,6 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\202111151242362_Initial.cs" />
+    <Compile Include="Migrations\202111151242362_Initial.designer.cs">
+      <DependentUpon>202111151242362_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Data\ApplicationDbContext.cs" />
     <Compile Include="Views\FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,10 +71,12 @@
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Customer.cs" />
-    <Compile Include="Models\Data\ApplicationDbContext.cs" />
     <Compile Include="Models\EntityBase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Migrations\202111151242362_Initial.resx">
+      <DependentUpon>202111151242362_Initial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </EmbeddedResource>

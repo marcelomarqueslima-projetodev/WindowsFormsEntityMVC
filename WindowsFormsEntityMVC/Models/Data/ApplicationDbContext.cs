@@ -1,16 +1,21 @@
-﻿using System.Data.Entity;
+using System;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity;
+using System.Linq;
 
 namespace WindowsFormsEntityMVC.Models.Data
 {
-    public class ApplicationDbContext : DbContext
+    public partial class ApplicationDbContext : DbContext
     {
-        public ApplicationDbContext() : base("name=DBEntities") { }
+        public ApplicationDbContext()
+            : base("name=ApplicationDbContext")
+        {
+        }
+
+        public DbSet<Customer> Customers { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
         }
-
-        public virtual DbSet<Customer> Customers { get; set; }
     }
 }
