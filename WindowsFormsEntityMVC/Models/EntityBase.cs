@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace WindowsFormsEntityMVC.Models
 {
@@ -8,6 +9,8 @@ namespace WindowsFormsEntityMVC.Models
         {
             Id = Guid.NewGuid();
         }
+        [Key]
+        [Required]
         public Guid Id { get; set; }
     }
 }
